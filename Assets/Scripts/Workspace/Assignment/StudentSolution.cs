@@ -97,7 +97,6 @@ namespace Assignment
 
         public int[] AS01_FindFirstAndLastElementOfArray(int[] array, int target)
         {
-      
             int first = -1;
             int last = -1;
 
@@ -107,10 +106,16 @@ namespace Assignment
                 {
                     if (first == -1)
                     {
-                        first = i; 
+                        first = i;
                     }
-                    last = i; 
+                    last = i;
                 }
+            }
+
+            // ถ้าหาไม่เจอเลย ให้คืนค่าเป็น [-1] ตามที่ Test Case AS01_FindFirstAndLastElementOfArray_NotFound กำหนด
+            if (first == -1)
+            {
+                return new int[] { -1 };
             }
 
             return new int[] { first, last };
